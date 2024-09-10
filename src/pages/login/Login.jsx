@@ -1,12 +1,12 @@
-import { Box, Button } from '@mui/material';
-import axios from 'axios';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Box, Button } from "@mui/material";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const navigate = useNavigate();
 
@@ -24,17 +24,12 @@ const Login = () => {
       const data = {
         ...loginInfo,
       };
-      const response = await axios.post(
-        'https://hotel.aotrek.net/api/auth/login',
-        data
-      );
+      const response = await axios.post("https://hotel.aotrek.net/api/auth/login", data);
       if (response?.status === 200) {
-        localStorage.setItem('token', response?.data?.user?.token);
-        navigate('/product/manage');
+        localStorage.setItem("token", response?.data?.user?.token);
+        navigate("/product/manage");
       }
-    } catch (er) {
-      // console.log('error', er);
-    }
+    } catch (er) {}
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,58 +39,59 @@ const Login = () => {
   return (
     <Box
       sx={{
-        bgcolor: '#bcbcbc',
-        height: '100vh',
+        bgcolor: "#bcbcbc",
+        height: "100vh",
+        overflow: "hidden",
       }}
     >
       <form
         onSubmit={handleSubmit}
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'relative',
-          top: '400px',
-          left: '600px',
-          fontSize: '1.3rem',
-          fontWeight: '500',
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+          top: "250px",
+          left: "600px",
+          fontSize: "1.3rem",
+          fontWeight: "500",
         }}
       >
-        <Box mb={2} sx={{ display: 'flex', columnGap: '70px' }}>
-          <label htmlFor='email'>Email</label>
+        <Box mb={2} sx={{ display: "flex", columnGap: "70px" }}>
+          <label htmlFor="email">Email</label>
           <input
-            id='email'
-            type='text'
-            name='email'
+            id="email"
+            type="text"
+            name="email"
             value={loginInfo?.email}
-            placeholder='Enter email'
+            placeholder="Enter email"
             onChange={handleLoginInfoChange}
             style={{
-              width: '220px',
+              width: "220px",
             }}
           />
         </Box>
-        <Box mb={2} sx={{ display: 'flex', columnGap: '30px' }}>
-          <label htmlFor='password'>Password</label>
+        <Box mb={2} sx={{ display: "flex", columnGap: "30px" }}>
+          <label htmlFor="password">Password</label>
           <input
-            id='password'
-            type='password'
-            name='password'
+            id="password"
+            type="password"
+            name="password"
             value={loginInfo?.password}
-            placeholder='Enter password'
+            placeholder="Enter password"
             onChange={handleLoginInfoChange}
             style={{
-              width: '220px',
+              width: "220px",
             }}
           />
         </Box>
         <Button
-          variant='contained'
-          size='small'
-          color='primary'
-          type='submit'
+          variant="contained"
+          size="small"
+          color="primary"
+          type="submit"
           sx={{
-            width: '80px',
-            alignItems: 'center',
+            width: "80px",
+            alignItems: "center",
           }}
         >
           Login

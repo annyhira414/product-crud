@@ -1,29 +1,27 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import colorConfigs from '../../configs/colorConfigs';
-import sizeConfigs from '../../configs/sizeConfigs';
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import colorConfigs from "../../configs/colorConfigs";
+import sizeConfigs from "../../configs/sizeConfigs";
 
 const Topbar = ({ title }) => {
   return (
     <AppBar
-      position='fixed'
+      position="fixed"
       sx={{
-        maxWidth: 'auto',
-        // width: `calc(100% - ${sizeConfigs.sidebar.width} )`,
+        maxWidth: "auto",
         ml: sizeConfigs.sidebar.width,
-        boxShadow: '1px',
-        borderRadius: '5px',
+        boxShadow: "1px",
+        borderRadius: "5px",
         backgroundColor: colorConfigs.topbar.bg,
         color: colorConfigs.topbar.color,
-        top: '10px',
-        left: '50px',
-        right: '20px',
-        height: '50px',
-        justifyContent: 'center',
-        // padding: "8px 16px",
+        top: "10px",
+        left: "50px",
+        right: "20px",
+        height: "50px",
+        justifyContent: "center",
       }}
     >
       <Toolbar>
-        <Typography variant='h6'>{title}</Typography>
+        <Typography variant="h6">{title}</Typography>
       </Toolbar>
     </AppBar>
   );

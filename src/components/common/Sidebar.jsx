@@ -1,41 +1,34 @@
-import {
-  Avatar,
-  Drawer,
-  List,
-  Stack,
-  Toolbar,
-  Typography,
-} from '@mui/material';
-import colorConfigs from '../../configs/colorConfigs';
-import sizeConfigs from '../../configs/sizeConfigs';
-import appRoutes from '../../routes/appRoutes';
-import SidebarItem from './SidebarItem';
-import SidebarItemCollapse from './SidebarItemCollapse';
+import { Drawer, List, Stack, Toolbar, Typography } from "@mui/material";
+import colorConfigs from "../../configs/colorConfigs";
+import sizeConfigs from "../../configs/sizeConfigs";
+import appRoutes from "../../routes/appRoutes";
+import SidebarItem from "./SidebarItem";
+import SidebarItemCollapse from "./SidebarItemCollapse";
 
 const Sidebar = () => {
   return (
     <Drawer
-      variant='permanent'
+      variant="permanent"
       sx={{
         width: sizeConfigs.sidebar.width,
         flexShrink: 0,
-        '& .MuiDrawer-paper': {
+        "& .MuiDrawer-paper": {
           width: sizeConfigs.sidebar.width,
-          boxSizing: 'border-box',
-          borderRight: '0px',
+          boxSizing: "border-box",
+          borderRight: "0px",
           backgroundColor: colorConfigs.sidebar.bg,
           color: colorConfigs.sidebar.color,
         },
       }}
     >
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: '20px' }}>
-          <Stack sx={{ width: '100%' }} direction='row'>
+        <Toolbar sx={{ marginBottom: "20px" }}>
+          <Stack sx={{ width: "100%" }} direction="row">
             <Typography
               sx={{
-                position: 'relative',
-                top: '12px',
-                paddingLeft: '5px',
+                position: "relative",
+                top: "12px",
+                paddingLeft: "5px",
               }}
             ></Typography>
           </Stack>
